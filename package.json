@@ -1,7 +1,7 @@
 {
   "name": "l2",
   "version": "1.0.0",
-  "description": "",
+  "description": "Example",
   "main": "index.js",
   "repository": {
     "type": "git",
