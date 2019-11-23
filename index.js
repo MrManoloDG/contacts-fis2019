@@ -17,12 +17,15 @@ app.get('/', (req, res) => res.send('Hello World!'))
 
 app.get(BASE_API_PATH + "/contacts", (req,res) => {
     console.log(Date() + " - GET /contacts");
-    db.find({},{ name: 1, phone: 1, _id: 0 }, function (err, contacts) {
+    db.find({}, function (err, contacts) {
         if(err) {
             console.log(Date() + " - " + err);
             res.sendStatus(500);
         } else {
-            res.send(contacts);
+            res.send(contacts.map((contact) => {
+                delete contact._id;
+                return contact;
+            }));
         }  
     });
 });
