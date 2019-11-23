@@ -1,0 +1,12 @@
+languaje: node_js
+node_js:
+  - "9"
+
+install:
+  - npm install
+
+services:
+  - docker
+
+script:
+  - npm start
